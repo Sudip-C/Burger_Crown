@@ -1,0 +1,11 @@
+.navbar{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+.line{
+    border-left: 1px solid rgb(126, 122, 122);
+    height: 30px;
+}

@@ -1,0 +1,1 @@
+export const SET_DINE_TYPE = 'SET_DINE_TYPE'
