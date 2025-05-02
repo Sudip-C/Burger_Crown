@@ -5,7 +5,7 @@ import Navbar from "./components/navbar"
 function App (){
 
   const location = useLocation()
-  const hideNavbarPaths = ['/','/dashboard']
+  const hideNavbarPaths = ['/dashboard']
   
   const hideNavbar = hideNavbarPaths.includes(location.pathname)
   return (

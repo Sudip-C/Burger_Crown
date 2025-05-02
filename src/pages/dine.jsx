@@ -29,7 +29,7 @@ const Home = () => {
         </Carousel>
         <div className=' menu-section flex flex-col p-[30px] '>
         <h1 className='text-[25px] ml-[30px] text-black'>OUR MENU</h1>
-        <div className='menus flex justify-start gap-10 overflow-x-scroll hide-scrollbar mx-[30px] mt-[10px]'>
+        <div className='menus flex justify-start gap-10 p-2 overflow-x-scroll hide-scrollbar mx-[30px] mt-[10px]'>
             
            { menuData?.map((el)=>{
             return (

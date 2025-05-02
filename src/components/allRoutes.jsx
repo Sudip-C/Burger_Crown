@@ -8,8 +8,8 @@ const AllRoutes = () =>{
     const {dineType} = useSelector(state=>state.DineType)
     return(
         <Routes>
-            <Route path='/dashboard' element={dineType === "dine-in"?<Home/>:<Delivery/>}></Route>
-            <Route path='/' element={<Dashboard/>}/>
+            <Route path='/' element={dineType === "dine-in"?<Home/>:<Delivery/>}></Route>
+            <Route path='/dashboard' element={<Dashboard/>}/>
         </Routes>
     )
 }

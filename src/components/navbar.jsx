@@ -7,10 +7,47 @@ import avatar from '../assets/avatar.svg'
 import search from '../assets/search.svg'
 import Changer from '../helpers/toggle'
 import { useSelector } from 'react-redux'
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import Typography from '@mui/joy/Typography';
+import Sheet from '@mui/joy/Sheet';
+import { useState } from 'react'
+
 const Navbar = () => {
 
-   const {dineType} = useSelector((state) => state.DineType)
-    
+   const {dineType} = useSelector((state) => state.DineType);
+   const [open, setOpen] = useState(false);
+   const LoginModal =()=>{
+    return(
+        <Modal
+            aria-labelledby="modal-title"
+        aria-describedby="modal-desc"
+        open={open}
+        onClose={() => setOpen(false)}
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      >
+        <Sheet
+          variant="outlined"
+          sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+        >
+          <ModalClose variant="plain" sx={{ m: 1 }} />
+          <Typography
+            component="h2"
+            id="modal-title"
+            level="h4"
+            textColor="inherit"
+            sx={{ fontWeight: 'lg', mb: 1 }}
+          >
+            This is the modal title
+          </Typography>
+          <Typography id="modal-desc" textColor="text.tertiary">
+            Make sure to use <code>aria-labelledby</code> on the modal dialog with an
+            optional <code>aria-describedby</code> attribute.
+          </Typography>
+        </Sheet>
+        </Modal>
+    )
+}
     return (
         <nav className='navbar flex justify-between items-center px-5  gap-4'>
             <div className='flex justify-between items-center gap-2  w-[55%]'>
@@ -35,7 +72,7 @@ const Navbar = () => {
                 <img src={offer} alt=""  className='w-5 h-5'/>
                 KING DEALS
             </div>
-            <div className='flex items-center font-bold gap-1  '>
+            <div className='flex items-center font-bold gap-1 ' onClick={() => setOpen(true)}>
                 <img src={avatar} alt=""  className='w-5 h-5'/>
                 LOGIN
             </div>
@@ -47,6 +84,7 @@ const Navbar = () => {
                 <img src={search} alt="" className='w-7 h-7  ' />
             </div>
             </div>
+            {open && LoginModal()}
         </nav>
     )
 }
