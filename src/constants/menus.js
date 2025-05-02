@@ -11,6 +11,7 @@ import m10 from '../assets/m10.jpeg';
 import m11 from '../assets/m11.jpeg';
 import m12 from '../assets/m12.jpeg';
 import m13 from '../assets/m13.jpeg';
+import m14 from '../assets/m14.jpeg';
 export const menuData =[
     {
         id:1,
@@ -78,3 +79,46 @@ export const menuData =[
         title:"2 for Offers"
     },
 ]
+
+export const menuData2 =[
+    {
+        id:1,
+        img_url:m1,
+        title:"Korean Spicy Fest"
+    },
+    {
+        id:2,
+        img_url:m14,
+        title:"Best of Combos(Upto 20% Off)"
+    },
+    {
+        id:3,
+        img_url:m10,
+        title:"Whoppers"
+    },
+    {
+        id:4,
+        img_url:m5,
+        title:"Burger&Wraps"
+    },
+    {
+        id:5,
+        img_url:m11,
+        title:"King's Premium Burgers"
+    },
+    
+    {
+        id:6,
+        img_url:m8,
+        title:"Snacks"
+    },
+    {
+        id:7,
+        img_url:m7,
+        title:"Beverages"
+    },
+    {
+        id:8,
+        img_url:m12,
+        title:"BC Cafe"
+    },]
