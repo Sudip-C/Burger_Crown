@@ -12,6 +12,7 @@ import m11 from '../assets/m11.jpeg';
 import m12 from '../assets/m12.jpeg';
 import m13 from '../assets/m13.jpeg';
 import m14 from '../assets/m14.jpeg';
+
 export const menuData =[
     {
         id:1,

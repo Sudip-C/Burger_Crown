@@ -13,9 +13,9 @@ const dispatch = useDispatch()
   },[isChecked])
   function handleType(){
     if(isChecked){
-      dispatch(ChangeDineType('dine-in'))
+      dispatch(ChangeDineType('delivery'))
     }else{
-       dispatch(ChangeDineType('delivery'))
+       dispatch(ChangeDineType('dine-in'))
     }
   }
   return (
@@ -30,12 +30,12 @@ const dispatch = useDispatch()
           />
           <div
             className={`box block h-8 w-14 rounded-full ${
-              isChecked ? 'bg-red-900' : 'bg-orange-500'
+              !isChecked ? 'bg-red-900' : 'bg-orange-500'
             }`}
           ></div>
           <div
             className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
-              isChecked ? 'translate-x-full' : ''
+              !isChecked ? 'translate-x-full' : ''
             }`}
           ></div>
         </div>

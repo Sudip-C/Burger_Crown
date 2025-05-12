@@ -3,6 +3,7 @@ import Home from "../pages/dine"
 import {  useSelector } from "react-redux"
 import Delivery from "../pages/delivery"
 import Dashboard from "../pages/admin-dashboard"
+import ProductList from "../pages/product-listing"
 
 const AllRoutes = () =>{
     const {dineType} = useSelector(state=>state.DineType)
@@ -10,6 +11,7 @@ const AllRoutes = () =>{
         <Routes>
             <Route path='/' element={dineType === "dine-in"?<Home/>:<Delivery/>}></Route>
             <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path = '/product-list' element = {<ProductList/>}></Route>
         </Routes>
     )
 }

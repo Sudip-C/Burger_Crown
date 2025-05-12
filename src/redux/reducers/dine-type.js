@@ -1,6 +1,6 @@
 
 const initialState = {
-    dineType: 'delivery',
+    dineType: 'dine-in',
 }
 
 const DineType = (state = initialState, action) => {
