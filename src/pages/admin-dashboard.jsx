@@ -7,6 +7,7 @@ import wnotification from '../assets/white-notification.svg'
 import Logo from '../assets/Logo1.png';
 import Logo2 from '../assets/Logo2.png'
 import {Link as NavLink } from 'react-router-dom'
+import AllItems from "../components/admin-product";
 
 const Profile = (lightMode) => {
     return(
@@ -22,14 +23,15 @@ const Profile = (lightMode) => {
 const Dashboard = ()=> {
     const [lightMode, setLightMode] = useState(true);
     const [openProfile, setOpenProfile] = useState(false);
+    const [section , setSection]  = useState('user')
 return (
 <div className={`dashboard ${lightMode ? "bg-white text-black" : "bg-black text-white"}`}>
 <nav className="h-[60px] border-b-[1px] border-b-gray-200 w-full sticky top-0 flex justify-between">
 <section className="flex  items-center justify-start gap-7 w-[40%] py-3 px-6 text-[22px] ml-15">
     <NavLink to='/'><img src={lightMode?Logo:Logo2} alt="" className="w-[25%]"/></NavLink> 
-    <p className="cursor-pointer">Users</p>
-    <p className="cursor-pointer">Products</p>
-    <p className="cursor-pointer">Category</p>
+    <p className={`${section === 'user'?'underline decoration-sky-500 underline-offset-8':'no-underline'} cursor-pointer`}onClick={()=>setSection('user')}>Users</p>
+    <p className={`${section === 'products'?'underline decoration-sky-500 underline-offset-8':'no-underline'} cursor-pointer`}onClick={()=>setSection('products')}>Products</p>
+    <p className={`${section === 'category'?'underline decoration-sky-500 underline-offset-8':'no-underline'} cursor-pointer`}onClick={()=>setSection('category')}>Category</p>
 </section>
 <section className="flex items-center justify-end gap-6 w-[40%] py-3 px-6 text-[20px] mr-2">
 <div className=" w-[5%] cursor-pointer ">
@@ -44,7 +46,11 @@ return (
 </div>
 </section>
 </nav>
-<section className="h-[95vh] "></section>
+<section className="h-[95vh]">
+    {
+        section === 'products' && <AllItems/>
+    }
+</section>
 </div>
 )
 }

@@ -10,7 +10,9 @@ import '../styles/Home.css'
 import recom1 from '../assets/recom1.jpeg';
 import recom2 from '../assets/recom2.jpeg';
 import final from '../assets/final.jpg';
+import {Link as Navlink} from 'react-router-dom'
 const Home = () => {
+
     return (
         <div className="home w-[100%]">
         <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false} interval={3000}>
@@ -33,10 +35,10 @@ const Home = () => {
             
            { menuData?.map((el)=>{
             return (
-                <div key={el.id} className='flex-shrink-0 cursor-pointer flex flex-col items-center  justify-between w-[150px] h-[180px] ' >
+                <Navlink to='/product-list'><div key={el.id} className='flex-shrink-0 cursor-pointer flex flex-col items-center  justify-between w-[150px] h-[180px] ' >
                     <img src={el.img_url} alt={el.title} className='w-[100%] h-auto p-4 bg-white rounded-2xl  ' />
                     <h3 className='text-center text-[15px] font-bold text-black'>{el.title}</h3>
-                </div>
+                </div></Navlink>
             )
            })}
         </div>
